@@ -1,5 +1,5 @@
 import pytest
-from pytest_bdd import scenario, given, when, then
+from pytest_bdd import given, when, then
 
 import page_factory as pf
 
@@ -9,7 +9,6 @@ def context():
     return {}
 
 
-@scenario('edit_to_mongo_express.feature', 'Edit profile')
 def test_edit_my_profile(context):
     pass
 
@@ -19,7 +18,7 @@ def activate_page_factory():
     context['page_factory'] = pf.PageFactory()
 
 
-@when("To edit to:     'name': 'Gabi','email': 'GabiDaCoder@gmail.com','interests': 'Coding / Debugging'")
+@when("To edit to: 'name': 'Gabi','email': 'GabiDaCoder@gmail.com','interests': 'Coding / Debugging'")
 def edit_profile():
     context['page_home'].edit_profile_button()
     context['page_home'].name_editor()
